@@ -200,6 +200,7 @@ Transform:
   m_LocalPosition: {x: 0.58, y: -0.43499994, z: 1.59}
   m_LocalScale: {x: 0.15, y: 0.2, z: 0.9}
   m_Children:
+  - {fileID: 1697528623}
   - {fileID: 1747414626}
   - {fileID: 1859511802}
   m_Father: {fileID: 1632747368}
@@ -341,6 +342,7 @@ GameObject:
   - component: {fileID: 650574943}
   - component: {fileID: 650574946}
   - component: {fileID: 650574944}
+  - component: {fileID: 650574947}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -422,6 +424,20 @@ MonoBehaviour:
   moveSpeed: 5
   lookSensitivityX: 7
   lookSensitivityY: 5
+--- !u!114 &650574947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650574941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546595ee3ca411e45bb3a290823a3734, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  muzzle: {fileID: 1697528622}
+  shootPower: 100
 --- !u!1 &1119538469
 GameObject:
   m_ObjectHideFlags: 0
@@ -582,6 +598,36 @@ Transform:
   m_Father: {fileID: 650574945}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1697528622
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1697528623}
+  m_Layer: 0
+  m_Name: GunMuzzle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1697528623
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1697528622}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 98154356}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1726949973
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +728,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 0.19957}
   m_Children: []
   m_Father: {fileID: 98154356}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1747414627
 BoxCollider:
@@ -773,7 +819,7 @@ Transform:
   m_LocalScale: {x: 0.99999994, y: 1.4679999, z: 0.19956668}
   m_Children: []
   m_Father: {fileID: 98154356}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1859511803
 BoxCollider:
