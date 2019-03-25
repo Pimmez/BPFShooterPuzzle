@@ -3,16 +3,10 @@
 public class Shoot : MonoBehaviour
 {
 
-	private GameObject prefab;
+	public float damage = 10f;
+	public float range = 100f;
 
-	[SerializeField] private GameObject muzzle;
-	[SerializeField] private float shootPower = 100;
-
-	// Start is called before the first frame update
-	void Start()
-    {
-		prefab = Resources.Load("Projectile") as GameObject;
-    }
+	public Camera fpsCam;
 
     // Update is called once per frame
     void Update()
@@ -25,9 +19,11 @@ public class Shoot : MonoBehaviour
 
 	private void ShootBullet()
 	{
-		Transform projectile = Instantiate(prefab, muzzle, Quaternion.identity) as Transform;
-		Rigidbody rb = projectile.GetComponent<Rigidbody>();
-		projectile.transform.parent = null;
-		rb.velocity = muzzle.transform.forward * (shootPower * 10) * Time.deltaTime;
+		RaycastHit hit;
+		if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))
+		{
+			Debug.Log(hit.transform.name);
+		}
+		
 	}
 }
