@@ -1,16 +1,22 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-	[SerializeField] private int coinAmount = 10;
+	public static Action CoinEvent;
+
+	private float coinAmount = 10f;
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if(other.gameObject.tag == Tags.Player)
+		if (other.gameObject.tag == Tags.Player)
 		{
 			Destroy(this.gameObject);
-			
-			//Do Something
+
+			if (CoinEvent != null)
+			{
+				CoinEvent();
+			}
 		}
 	}
 }
