@@ -6,14 +6,23 @@ public class Objectives : MonoBehaviour
 {
 	[SerializeField] private Color col;
 	[SerializeField] GameObject hoop;
+	[SerializeField] private HoopHolder hoopHolder;
+	private AudioManager audioManager;
+
+	private void Start()
+	{
+		audioManager = FindObjectOfType<AudioManager>();
+		hoopHolder = FindObjectOfType<HoopHolder>();
+		hoopHolder.hoops.Add(this.gameObject);
+	}
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if(other.gameObject.tag == Tags.Projectile)
 		{
-			Debug.Log("DONE");
-			//NEXT LEVEL
+			hoopHolder.hoops.Remove(this.gameObject);
 			hoop.GetComponent<Renderer>().material.color = col;
+			audioManager.PlayAudioOnce(1);
 		}
 	}
 }
