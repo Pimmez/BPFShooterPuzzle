@@ -172,7 +172,7 @@ GameObject:
   - component: {fileID: 1226968297328413035}
   m_Layer: 0
   m_Name: RigidBodyFPSController
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -237,8 +237,8 @@ MonoBehaviour:
   cam: {fileID: 1226968296631587819}
   movementSettings:
     ForwardSpeed: 8
-    BackwardSpeed: 4
-    StrafeSpeed: 4
+    BackwardSpeed: 6
+    StrafeSpeed: 5
     RunMultiplier: 2
     RunKey: 304
     JumpForce: 50
@@ -246,39 +246,30 @@ MonoBehaviour:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: -90
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
         time: 0
         value: 1
         inSlope: 0
         outSlope: 0
-        tangentMode: 0
+        tangentMode: 34
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
-        time: 90
-        value: 0
+        time: 1
+        value: 1
         inSlope: 0
         outSlope: 0
-        tangentMode: 0
+        tangentMode: 34
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     CurrentTargetSpeed: 8
   mouseLook:
-    XSensitivity: 2
-    YSensitivity: 2
+    XSensitivity: 4
+    YSensitivity: 4
     clampVerticalRotation: 1
     MinimumX: -80
     MaximumX: 90
@@ -333,7 +324,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dee25e23711056a43ab599ec2f0fc041, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 1000
+  force: 1500
   projectile: {fileID: 707814533766536866, guid: e91b9c5f7b9f4fa418b641edfe5060dc,
     type: 3}
   muzzle: {fileID: 1226968297342281079}
@@ -353,37 +344,37 @@ PrefabInstance:
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.509
+      value: 0.41021532
       objectReference: {fileID: 0}
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.43000007
+      value: -0.34348476
       objectReference: {fileID: 0}
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1.07
+      value: 0.9221963
       objectReference: {fileID: 0}
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.023719365
       objectReference: {fileID: 0}
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.009194187
       objectReference: {fileID: 0}
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.0009708601
       objectReference: {fileID: 0}
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9996759
       objectReference: {fileID: 0}
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
@@ -393,17 +384,17 @@ PrefabInstance:
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -2.719
       objectReference: {fileID: 0}
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -1.052
       objectReference: {fileID: 0}
     - target: {fileID: 3787190797687743235, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: -0.086
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f985f8ae303e7f49bcbad1bfde0d8e5, type: 3}

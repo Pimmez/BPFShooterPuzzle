@@ -10,13 +10,16 @@ public class GameManagerUI : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI timer;
 	[SerializeField] private float timeLeft = 200;
 	[SerializeField] private Gun gun;
+	[SerializeField] private GameObject miniHud;
 	private int min;
 	private int sec;
+	private bool isShowing;
 
 	//DISPLAY AMOUNT OF HOOPS PER LEVEL AND DECREASE THEM WHEN COMPLETED
 
 	private void Start()
 	{
+		miniHud.SetActive(false);
 		gun = FindObjectOfType<Gun>();
 
 		ammo.text = "" + gun.Magazine;
@@ -31,6 +34,7 @@ public class GameManagerUI : MonoBehaviour
 	{
 		TimerUpdate();
 		UIAmmoUpdate();
+		MiniHUDActions();
 	}
 
 	private void TimerUpdate()
@@ -45,6 +49,38 @@ public class GameManagerUI : MonoBehaviour
 		}
 	}
 
+	private void MiniHUDActions()
+	{
+		if(Input.GetKeyDown(KeyCode.Escape))
+		{
+			isShowing = !isShowing;
+			miniHud.SetActive(isShowing);
+
+			if(isShowing)
+			{
+				Time.timeScale = 0;
+			}
+			else
+			{
+				Time.timeScale = 1;
+			}
+		}
+
+		if(miniHud.activeInHierarchy)
+		{
+			if (Input.GetKeyDown(KeyCode.R))
+			{
+				Time.timeScale = 1;
+				SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+			}
+			if (Input.GetKeyDown(KeyCode.X))
+			{
+				Time.timeScale = 1;
+				SceneManager.LoadScene("Menu");
+			}
+		}
+	}
+		
 	private void UIAmmoUpdate()
 	{
 		ammo.text = "" + gun.Magazine;

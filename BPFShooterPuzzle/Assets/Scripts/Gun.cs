@@ -33,7 +33,6 @@ public class Gun : MonoBehaviour
 
 	private void EmptyMagazine()
 	{
-		Debug.Log(magazine);
 		if (magazine == 0)
 		{
 			audioManager.PlayAudioOnce(3);

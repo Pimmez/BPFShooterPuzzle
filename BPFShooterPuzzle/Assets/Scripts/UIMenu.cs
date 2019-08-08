@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class UIMenu : MonoBehaviour
 {
-    public void PlayGame(string levelName)
+	private void Start()
+	{
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+	}
+
+	public void PlayGame(string levelName)
 	{
 		SceneManager.LoadScene(levelName);
+		Cursor.visible = false;
 	}
 
 	public void RestartLevel(string levelName)
